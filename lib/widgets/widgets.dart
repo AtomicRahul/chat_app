@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 Widget appBarMain(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
+      centerTitle: true,
       title: Text(
-        "Start Chatting Bitch",
+        "Chat App",
         style: TextStyle(
           color: Colors.black87,
         ),
@@ -14,14 +15,16 @@ Widget appBarMain(BuildContext context) {
   );
 }
 
-InputDecoration textFieldInputDecoration(String hintText) {
+InputDecoration textFieldInputDecoration(
+  String hintText,
+) {
   return InputDecoration(
       hintText: hintText,
-      hintStyle: TextStyle(color: Colors.white),
+      hintStyle: TextStyle(color: Colors.black26),
       focusedBorder:
-          UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)),
+          UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
       enabledBorder:
-          UnderlineInputBorder(borderSide: BorderSide(color: Colors.white)));
+          UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)));
 }
 
 TextStyle simpleTextFieldStyle() {
@@ -29,6 +32,5 @@ TextStyle simpleTextFieldStyle() {
 }
 
 TextStyle mediumTextFieldStyle() {
-  return TextStyle(
-      color: Colors.black, fontSize: 17, decoration: TextDecoration.underline);
+  return TextStyle(color: Colors.blue, fontSize: 17);
 }
