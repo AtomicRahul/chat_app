@@ -73,7 +73,7 @@ class _SignInState extends State<SignIn> {
                           gradient: LinearGradient(
                               colors: [Colors.black54, Colors.black54])),
                       child: Text(
-                        "Sign In Woth Google",
+                        "Sign In With Google",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
