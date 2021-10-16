@@ -44,12 +44,13 @@ class _SignUpState extends State<SignUp> {
                         style: simpleTextFieldStyle(),
                         decoration: textFieldInputDecoration("Password")),
                     SizedBox(
-                      height: 40,
+                      height: 28,
                     ),
                     Container(
                       alignment: Alignment.centerRight,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 16),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                         child: Text(
                           "Forget Password?",
                           style: simpleTextFieldStyle(),
@@ -57,7 +58,7 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 15,
                     ),
                     Container(
                       alignment: Alignment.center,
@@ -67,7 +68,7 @@ class _SignUpState extends State<SignUp> {
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.blue),
                       child: Text(
-                        "Create Account",
+                        "Sign Up",
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
