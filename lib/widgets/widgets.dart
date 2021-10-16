@@ -20,11 +20,13 @@ InputDecoration textFieldInputDecoration(
 ) {
   return InputDecoration(
       hintText: hintText,
-      hintStyle: TextStyle(color: Colors.black26),
-      focusedBorder:
-          UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)),
-      enabledBorder:
-          UnderlineInputBorder(borderSide: BorderSide(color: Colors.black)));
+      hintStyle: TextStyle(color: Colors.black12),
+      focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(color: Colors.blue, width: 1.2)),
+      enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(8),
+          borderSide: BorderSide(color: Colors.grey)));
 }
 
 TextStyle simpleTextFieldStyle() {

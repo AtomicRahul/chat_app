@@ -12,11 +12,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-          primaryColor: Color(0xffFF8D44),
-          scaffoldBackgroundColor: Colors.white,
-          brightness: Brightness.light,
-          textSelectionTheme:
-              TextSelectionThemeData(cursorColor: Colors.black)),
+        scaffoldBackgroundColor: Colors.white,
+        primarySwatch: Colors.blue,
+      ),
       home: SignUp(),
     );
   }
