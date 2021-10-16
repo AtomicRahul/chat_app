@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.blue),
                       child: Text(
-                        "Sign In",
+                        "Sign In now",
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
