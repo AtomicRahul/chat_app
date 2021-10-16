@@ -1,3 +1,4 @@
+import 'package:chat_app/views/signup.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -12,17 +13,10 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        child: appBarMain(context),
-        preferredSize: const Size.fromHeight(100),
-      ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.2,
-            ),
-          ),
           SingleChildScrollView(
             child: Container(
               child: Container(
@@ -31,7 +25,7 @@ class _SignInState extends State<SignIn> {
                   children: [
                     TextField(
                         style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("email")),
+                        decoration: textFieldInputDecoration("Email")),
                     SizedBox(height: 30),
                     TextField(
                         style: simpleTextFieldStyle(),
@@ -51,48 +45,54 @@ class _SignInState extends State<SignIn> {
                       ),
                     ),
                     SizedBox(
-                      height: 15,
+                      height: 60,
                     ),
                     Container(
                       alignment: Alignment.center,
                       width: MediaQuery.of(context).size.width,
                       padding: EdgeInsets.symmetric(vertical: 15),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          gradient: LinearGradient(
-                              colors: [Colors.white, Colors.white])),
-                      child: Text("Sign In"),
-                    ),
-                    SizedBox(height: 15),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          gradient: LinearGradient(
-                              colors: [Colors.black54, Colors.black54])),
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.blue),
                       child: Text(
-                        "Sign In Woth Google",
+                        "Sign In",
+                        style: TextStyle(fontSize: 18, color: Colors.white),
+                      ),
+                    ),
+                    SizedBox(height: 35),
+                    Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.blue),
+                      child: Text(
+                        "Sign In With Google",
                         style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 50),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Don't have an account? ",
+                          "Don't have an account?  ",
                           style: simpleTextFieldStyle(),
                         ),
-                        Text(
-                          "Register Now",
-                          style: mediumTextFieldStyle(),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignUp()));
+                          },
+                          child: Text(
+                            "Register Now",
+                            style: mediumTextFieldStyle(),
+                          ),
                         ),
                       ],
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.2,
                     ),
                   ],
                 ),
