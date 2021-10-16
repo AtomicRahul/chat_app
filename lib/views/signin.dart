@@ -20,7 +20,7 @@ class _SignInState extends State<SignIn> {
           SingleChildScrollView(
             child: Container(
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 24),
+                padding: EdgeInsets.symmetric(horizontal: 50),
                 child: Column(
                   children: [
                     TextField(
@@ -59,7 +59,34 @@ class _SignInState extends State<SignIn> {
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
-                    SizedBox(height: 35),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                            child: Padding(
+                          padding: const EdgeInsets.only(right: 20, left: 20),
+                          child: Divider(
+                            color: Colors.black,
+                          ),
+                        )),
+                        Text(
+                          "OR",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                        Expanded(
+                            child: Padding(
+                          padding: const EdgeInsets.only(right: 20, left: 20),
+                          child: Divider(
+                            color: Colors.black,
+                          ),
+                        ))
+                      ],
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
                     Container(
                       alignment: Alignment.center,
                       width: MediaQuery.of(context).size.width,
