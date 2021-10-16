@@ -13,8 +13,10 @@ Future<User> createAccount(String name, String email, String password) async {
       return user;
     } else {
       print("Account Creation Failed");
+      return user;
     }
   } catch (e) {
     print(e);
+    return null;
   }
 }
