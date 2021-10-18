@@ -1,4 +1,3 @@
-import 'package:chat_app/services/methods.dart';
 import 'package:chat_app/views/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/widgets.dart';
@@ -150,7 +149,29 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ],
                     ),
-                  ),
+                    SizedBox(height: 50),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Already Have an Account?  ",
+                          style: simpleTextFieldStyle(),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SignIn()));
+                          },
+                          child: Text(
+                            "Sign in",
+                            style: mediumTextFieldStyle(),
+                          ),
+                        ),
+                      ],
+                    ),
+            ],
                 ),
               ),
             ],
