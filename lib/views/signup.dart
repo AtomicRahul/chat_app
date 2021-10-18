@@ -24,7 +24,7 @@ class _SignUpState extends State<SignUp> {
       return Center(
         child: Container(
           height: size.height / 20,
-          width: size.height / 20,
+          width: size.width / 20,
           child: CircularProgressIndicator(),
         ),
       );
@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
           child: Scaffold(
               body: SingleChildScrollView(
         child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
