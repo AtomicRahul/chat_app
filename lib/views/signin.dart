@@ -93,7 +93,7 @@ class _SignInState extends State<SignIn> {
                         "Sign In With Google",
                         style: TextStyle( fontSize: 18,color: Colors.white),
                       ),
-                      Sizedbox(
+                      SizedBox(
                         height: 18,
                       ),
                       Container(
