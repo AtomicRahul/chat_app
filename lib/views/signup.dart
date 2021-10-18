@@ -1,3 +1,4 @@
+import 'package:chat_app/services/methods.dart';
 import 'package:chat_app/views/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/widgets.dart';
@@ -61,15 +62,52 @@ class _SignUpState extends State<SignUp> {
                         height: 80,
                       ),
                       Container(
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.blue),
-                        child: Text(
-                          "Create Account",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        alignment: Alignment.centerRight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
+                          child: Text(
+                            "Forget Password?",
+                            style: simpleTextFieldStyle(),
+                          ),
+                        ),
+                      ),
+                      SizedBox(height: 40),
+                      GestureDetector(
+                        onTap: () {
+                          if (_name.text.isNotEmpty &&
+                              _email.text.isNotEmpty &&
+                              _password.text.isNotEmpty) {
+                            setState(() {
+                              isLoading = true;
+                            });
+
+                            createAccount(
+                                    _name.text, _email.text, _password.text)
+                                .then((user) {
+                              if (user != null) {
+                                setState(() {
+                                  isLoading = false;
+                                });
+                                print("Login Successfull");
+                              } else {
+                                print("Login Failed");
+                              }
+                            });
+                          } else {
+                            print("Plese Enter Fields");
+                          }
+                        },
+                        child: Container(
+                          alignment: Alignment.center,
+                          width: MediaQuery.of(context).size.width,
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15),
+                              color: Colors.blue),
+                          child: Text(
+                            "Create Account",
+                            style: TextStyle(fontSize: 18, color: Colors.white),
+                          ),
                         ),
                       ),
                       SizedBox(
