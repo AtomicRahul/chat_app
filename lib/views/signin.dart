@@ -54,7 +54,7 @@ class _SignInState extends State<SignIn> {
                           borderRadius: BorderRadius.circular(15),
                           color: Colors.blue),
                       child: Text(
-                        "Sign In now",
+                        "Sign In",
                         style: TextStyle(fontSize: 18, color: Colors.white),
                       ),
                     ),
@@ -95,7 +95,7 @@ class _SignInState extends State<SignIn> {
                           color: Colors.blue),
                       child: Text(
                         "Sign In With Google",
-                        style: TextStyle(color: Colors.white),
+                        style: TextStyle( fontSize: 18,color: Colors.white),
                       ),
                     ),
                     SizedBox(height: 50),
