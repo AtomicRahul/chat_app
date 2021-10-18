@@ -42,7 +42,7 @@ class _SignUpState extends State<SignUp> {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 120,
+                        height: size.height / 5,
                       ),
                       TextField(
                           controller: _name,

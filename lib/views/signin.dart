@@ -12,6 +12,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -24,7 +25,7 @@ class _SignInState extends State<SignIn> {
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
                     children: [
-                      SizedBox(height: 150),
+                      SizedBox(height: size.height / 5),
                       TextField(
                           style: simpleTextFieldStyle(),
                           decoration: textFieldInputDecoration("Email")),
