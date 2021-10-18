@@ -2,6 +2,7 @@ import 'package:chat_app/views/signup.dart';
 import 'package:chat_app/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/services/methods.dart';
+import 'package:chat_app/views/homescreen.dart';
 
 class SignIn extends StatefulWidget {
   @override
@@ -74,6 +75,11 @@ class _SignInState extends State<SignIn> {
                                 if (user != null) {
                                   setState(() {
                                     isLoading = false;
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                HomeScreen()));
                                   });
                                   print("Login Successfull");
                                 } else {
