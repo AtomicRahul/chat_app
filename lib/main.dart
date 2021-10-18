@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:chat_app/views/signup.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
