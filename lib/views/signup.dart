@@ -30,18 +30,18 @@ class _SignUpState extends State<SignUp> {
     } else {
       return SafeArea(
           child: Scaffold(
-              body: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-            SingleChildScrollView(
-              child: Container(
+              body: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
                 child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 50,
+                        height: 120,
                       ),
                       TextField(
                           controller: _name,
@@ -149,8 +149,8 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-            )
-          ])));
+            ]),
+      )));
     }
   }
 }
