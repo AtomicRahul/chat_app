@@ -58,19 +58,8 @@ class _SignUpState extends State<SignUp> {
                           style: simpleTextFieldStyle(),
                           decoration: textFieldInputDecoration("Password")),
                       SizedBox(
-                        height: 40,
+                        height: 80,
                       ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            "Forget Password?",
-                            style: simpleTextFieldStyle(),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 40),
                       Container(
                         alignment: Alignment.center,
                         width: MediaQuery.of(context).size.width,
