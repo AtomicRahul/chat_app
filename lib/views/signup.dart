@@ -17,116 +17,140 @@ class _SignUpState extends State<SignUp> {
   bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SingleChildScrollView(
-            child: Container(
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 50),
-                child: Column(
-                  children: [
-                    TextField(
-                        controller: _name,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Username")),
-                    SizedBox(height: 30),
-                    TextField(
-                        controller: _email,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Email")),
-                    SizedBox(height: 30),
-                    TextField(
-                        controller: _password,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Password")),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    SizedBox(
-                      height: 40,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue),
-                      child: Text(
-                        "Create Account",
-                        style: TextStyle(fontSize: 18, color: Colors.white),
+    final size = MediaQuery.of(context).size;
+
+    if (isLoading) {
+      return Center(
+        child: Container(
+          height: size.height / 20,
+          width: size.height / 20,
+          child: CircularProgressIndicator(),
+        ),
+      );
+    } else {
+      return SafeArea(
+          child: Scaffold(
+              body: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 120,
                       ),
-                    ),
-                    SizedBox(
-                      height: 18,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Padding(
-                          padding: const EdgeInsets.only(right: 20, left: 20),
-                          child: Divider(
-                            color: Colors.black,
-                          ),
-                        )),
-                        Text(
-                          "OR",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        Expanded(
-                            child: Padding(
-                          padding: const EdgeInsets.only(right: 20, left: 20),
-                          child: Divider(
-                            color: Colors.black,
-                          ),
-                        ))
-                      ],
-                    ),
-                    SizedBox(
-                      height: 18,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue),
-                      child: Text(
-                        "Sign Up With Google",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                    SizedBox(height: 50),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "Already Have an Account?  ",
+                      TextField(
+                          controller: _name,
                           style: simpleTextFieldStyle(),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SignIn()));
-                          },
+                          decoration: textFieldInputDecoration("Username")),
+                      SizedBox(height: 30),
+                      TextField(
+                          controller: _email,
+                          style: simpleTextFieldStyle(),
+                          decoration: textFieldInputDecoration("Email")),
+                      SizedBox(height: 30),
+                      TextField(
+                          controller: _password,
+                          style: simpleTextFieldStyle(),
+                          decoration: textFieldInputDecoration("Password")),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 16),
                           child: Text(
-                            "Sign in",
-                            style: mediumTextFieldStyle(),
+                            "Forget Password?",
+                            style: simpleTextFieldStyle(),
                           ),
                         ),
-                      ],
-                    ),
-                  ],
+                      ),
+                      SizedBox(height: 40),
+                      Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.blue),
+                        child: Text(
+                          "Create Account",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Row(
+                        children: [
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.only(right: 20, left: 20),
+                            child: Divider(
+                              color: Colors.black,
+                            ),
+                          )),
+                          Text(
+                            "OR",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          Expanded(
+                              child: Padding(
+                            padding: const EdgeInsets.only(right: 20, left: 20),
+                            child: Divider(
+                              color: Colors.black,
+                            ),
+                          ))
+                        ],
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        padding: EdgeInsets.symmetric(vertical: 15),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.blue),
+                        child: Text(
+                          "Sign Up With Google",
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                      SizedBox(height: 40),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Already Have an Account?  ",
+                            style: simpleTextFieldStyle(),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SignIn()));
+                            },
+                            child: Text(
+                              "Sign in",
+                              style: mediumTextFieldStyle(),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ),
-        ],
-      ),
-    );
+            ]),
+      )));
+    }
   }
 }
