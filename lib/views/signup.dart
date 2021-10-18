@@ -84,7 +84,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                       ),
                       SizedBox(
-                        height: 18,
+                        height: 20,
                       ),
                       Row(
                         children: [
@@ -109,7 +109,7 @@ class _SignUpState extends State<SignUp> {
                         ],
                       ),
                       SizedBox(
-                        height: 18,
+                        height: 20,
                       ),
                       Container(
                         alignment: Alignment.center,
@@ -123,29 +123,7 @@ class _SignUpState extends State<SignUp> {
                           style: TextStyle(color: Colors.white, fontSize: 18),
                         ),
                       ),
-                      SizedBox(height: 50),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "Already Have an Account?  ",
-                            style: simpleTextFieldStyle(),
-                          ),
-                          GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignIn()));
-                            },
-                            child: Text(
-                              "Sign in",
-                              style: mediumTextFieldStyle(),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 50),
+                      SizedBox(height: 40),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
