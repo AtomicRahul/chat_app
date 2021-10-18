@@ -76,14 +76,22 @@ class _SignInState extends State<SignIn> {
                             "OR",
                             style: TextStyle(color: Colors.black),
                           ),
-                          Expanded(
-                              child: Padding(
-                            padding: const EdgeInsets.only(right: 20, left: 20),
-                            child: Divider(
-                              color: Colors.black,
-                            ),
-                          ))
-                        ],
+                        
+                      ],
+                    ),
+                    SizedBox(
+                      height: 18,
+                    ),
+                    Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                      padding: EdgeInsets.symmetric(vertical: 15),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: Colors.blue),
+                      child: Text(
+                        "Sign In With Google",
+                        style: TextStyle( fontSize: 18,color: Colors.white),
                       ),
                       SizedBox(
                         height: 18,
