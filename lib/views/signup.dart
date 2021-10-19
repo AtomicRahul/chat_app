@@ -1,4 +1,5 @@
 import 'package:chat_app/services/methods.dart';
+import 'package:chat_app/views/homescreen.dart';
 import 'package:chat_app/views/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/widgets.dart';
@@ -79,6 +80,10 @@ class _SignUpState extends State<SignUp> {
                               _password.text.isNotEmpty) {
                             setState(() {
                               isLoading = true;
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomeScreen()));
                             });
 
                             createAccount(
