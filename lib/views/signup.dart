@@ -3,6 +3,7 @@ import 'package:chat_app/views/homescreen.dart';
 import 'package:chat_app/views/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/widgets/widgets.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -154,8 +155,12 @@ class _SignUpState extends State<SignUp> {
                             onTap: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SignIn()));
+                                  PageTransition(
+                                      duration: Duration(milliseconds: 300),
+                                      reverseDuration:
+                                          Duration(milliseconds: 300),
+                                      child: SignIn(),
+                                      type: PageTransitionType.rightToLeft));
                             },
                             child: Text(
                               "Sign in",
