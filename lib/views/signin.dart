@@ -80,9 +80,9 @@ class _SignInState extends State<SignIn> {
                                         context,
                                         PageTransition(
                                             duration:
-                                                Duration(milliseconds: 300),
+                                                Duration(milliseconds: 200),
                                             reverseDuration:
-                                                Duration(milliseconds: 300),
+                                                Duration(milliseconds: 200),
                                             child: HomeScreen(),
                                             type: PageTransitionType
                                                 .rightToLeft));
@@ -168,9 +168,9 @@ class _SignInState extends State<SignIn> {
                                 Navigator.push(
                                     context,
                                     PageTransition(
-                                        duration: Duration(milliseconds: 300),
+                                        duration: Duration(milliseconds: 200),
                                         reverseDuration:
-                                            Duration(milliseconds: 300),
+                                            Duration(milliseconds: 200),
                                         child: SignUp(),
                                         type: PageTransitionType.leftToRight));
                               },
