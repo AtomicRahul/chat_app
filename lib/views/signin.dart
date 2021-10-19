@@ -78,9 +78,14 @@ class _SignInState extends State<SignIn> {
                                     isLoading = false;
                                     Navigator.push(
                                         context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                HomeScreen()));
+                                        PageTransition(
+                                            duration:
+                                                Duration(milliseconds: 300),
+                                            reverseDuration:
+                                                Duration(milliseconds: 300),
+                                            child: HomeScreen(),
+                                            type: PageTransitionType
+                                                .rightToLeft));
                                   });
                                   print("Login Successfull");
                                 } else {
