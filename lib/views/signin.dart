@@ -37,7 +37,7 @@ class _SignInState extends State<SignIn> {
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       children: [
-                        SizedBox(height: size.height / 5),
+                        SizedBox(height: size.height * 0.15),
                         TextField(
                             controller: _email,
                             style: simpleTextFieldStyle(),
@@ -48,7 +48,7 @@ class _SignInState extends State<SignIn> {
                             style: simpleTextFieldStyle(),
                             decoration: textFieldInputDecoration("Password")),
                         SizedBox(
-                          height: 40,
+                          height: 30,
                         ),
                         Container(
                           alignment: Alignment.centerRight,
@@ -61,7 +61,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 30,
                         ),
                         GestureDetector(
                           onTap: () {

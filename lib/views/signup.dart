@@ -42,9 +42,7 @@ class _SignUpState extends State<SignUp> {
                   padding: EdgeInsets.symmetric(horizontal: 30),
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: size.height / 5,
-                      ),
+                      SizedBox(height: size.height * 0.15),
                       TextField(
                           controller: _name,
                           style: simpleTextFieldStyle(),
@@ -60,19 +58,8 @@ class _SignUpState extends State<SignUp> {
                           style: simpleTextFieldStyle(),
                           decoration: textFieldInputDecoration("Password")),
                       SizedBox(
-                        height: 80,
+                        height: 40,
                       ),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 16),
-                          child: Text(
-                            "Forget Password?",
-                            style: simpleTextFieldStyle(),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 40),
                       GestureDetector(
                         onTap: () {
                           if (_name.text.isNotEmpty &&
