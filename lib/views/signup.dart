@@ -16,7 +16,7 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _email = new TextEditingController();
   TextEditingController _password = new TextEditingController();
 
-  bool isLoading = true;
+  bool isLoading = false;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
