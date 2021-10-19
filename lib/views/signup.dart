@@ -16,17 +16,17 @@ class _SignUpState extends State<SignUp> {
   TextEditingController _email = new TextEditingController();
   TextEditingController _password = new TextEditingController();
 
-  bool isLoading = false;
+  bool isLoading = true;
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
 
     if (isLoading) {
-      return Center(
-        child: Container(
-          height: size.height / 20,
-          width: size.width / 20,
-          child: CircularProgressIndicator(),
+      return Scaffold(
+        body: Center(
+          child: Container(
+            child: CircularProgressIndicator(),
+          ),
         ),
       );
     } else {
