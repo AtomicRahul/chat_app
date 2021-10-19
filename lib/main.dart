@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
         textSelectionTheme: TextSelectionThemeData(
-          cursorColor: Colors.blue,
+          cursorColor: Colors.black,
         ),
       ),
       home: SignUp(),

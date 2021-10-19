@@ -23,10 +23,12 @@ class _SignUpState extends State<SignUp> {
     final size = MediaQuery.of(context).size;
 
     if (isLoading) {
-      return Scaffold(
-        body: Center(
-          child: Container(
-            child: CircularProgressIndicator(),
+      return SafeArea(
+        child: Scaffold(
+          body: Center(
+            child: Container(
+              child: CircularProgressIndicator(),
+            ),
           ),
         ),
       );
