@@ -158,7 +158,7 @@ class _SignUpState extends State<SignUp> {
                                   PageTransition(
                                       duration: Duration(milliseconds: 200),
                                       reverseDuration:
-                                          Duration(milliseconds: 200),
+                                          Duration(milliseconds: 2 + 00),
                                       child: SignIn(),
                                       type: PageTransitionType.rightToLeft));
                             },
