@@ -1,4 +1,3 @@
-import 'package:chat_app/views/chatRoomsScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:chat_app/views/signup.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -24,7 +23,7 @@ class MyApp extends StatelessWidget {
           cursorColor: Colors.black,
         ),
       ),
-      home: Chatrooms(),
+      home: SignUp(),
     );
   }
 }
