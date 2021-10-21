@@ -18,11 +18,13 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     if (isLoading) {
-      return Center(
-        child: Container(
-          height: size.height / 20,
-          width: size.height / 20,
-          child: CircularProgressIndicator(),
+      return SafeArea(
+        child: Scaffold(
+          body: Center(
+            child: Container(
+              child: CircularProgressIndicator(),
+            ),
+          ),
         ),
       );
     } else {
