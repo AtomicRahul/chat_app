@@ -37,27 +37,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text("HomeScreen"),
+          centerTitle: true,
+          title: Text("ChatBee"),
         ),
         body: isLoading
             ? Center(
-                child: Container(
-                  height: size.height / 20,
-                  width: size.height / 20,
-                ),
+                child: Container(),
               )
             : Column(
                 children: [
                   SizedBox(
-                    height: size.height / 20,
+                    height: size.height * 0.05,
                   ),
                   Container(
-                    height: size.height / 20,
-                    width: size.height,
+                    height: size.height * 0.1,
+                    width: size.width * 0.85,
                     alignment: Alignment.center,
                     child: Container(
-                      height: size.height / 14,
-                      width: size.width / 1.2,
                       child: TextField(
                         controller: _search,
                         decoration: InputDecoration(
@@ -67,10 +63,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(height: size.height / 30),
-                  ElevatedButton(
-                    onPressed: onSearch,
-                    child: Text("Search"),
+                  SizedBox(
+                    height: size.height * 0.02,
+                  ),
+                  Container(
+                    width: size.width * 0.85,
+                    alignment: Alignment.centerRight,
+                    child: ElevatedButton(
+                      onPressed: onSearch,
+                      child: Text("Search"),
+                    ),
                   ),
                   userMap != null
                       ? ListTile(
