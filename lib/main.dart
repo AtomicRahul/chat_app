@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme),
-        scaffoldBackgroundColor: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
         primarySwatch: Colors.blue,
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Colors.black,

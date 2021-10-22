@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
-class Chatrooms extends StatelessWidget {
-  const Chatrooms({Key? key}) : super(key: key);
+class ChatRoom extends StatelessWidget {
+  final Map<String, dynamic> userMap;
+  final String chatRoomId;
+
+  ChatRoom({required this.chatRoomId, required this.userMap});
+
+  final TextEditingController _message = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

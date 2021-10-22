@@ -1,3 +1,4 @@
+import 'package:chat_app/services/methods.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -36,51 +37,58 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: Text("ChatBee"),
-        ),
-        body: isLoading
-            ? Center(
-                child: Container(),
-              )
-            : Column(
-                children: [
-                  SizedBox(
-                    height: size.height * 0.05,
-                  ),
-                  Container(
-                    height: size.height * 0.1,
-                    width: size.width * 0.85,
-                    alignment: Alignment.center,
-                    child: Container(
-                      child: TextField(
-                        controller: _search,
-                        decoration: InputDecoration(
-                            hintText: "Search",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(12))),
-                      ),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("ChatBee"),
+        actions: [
+          IconButton(icon: Icon(Icons.logout), onPressed: () => logOut(context))
+        ],
+      ),
+      body: isLoading
+          ? Center(
+              child: Container(),
+            )
+          : Column(
+              children: [
+                SizedBox(
+                  height: size.height * 0.05,
+                ),
+                Container(
+                  height: size.height * 0.1,
+                  width: size.width * 0.85,
+                  alignment: Alignment.center,
+                  child: Container(
+                    child: TextField(
+                      controller: _search,
+                      decoration: InputDecoration(
+                          hintText: "Search",
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(12))),
                     ),
                   ),
-                  SizedBox(
-                    height: size.height * 0.02,
+                ),
+                SizedBox(
+                  height: size.height * 0.02,
+                ),
+                Container(
+                  width: size.width * 0.85,
+                  alignment: Alignment.centerRight,
+                  child: ElevatedButton(
+                    onPressed: onSearch,
+                    child: Text("Search"),
                   ),
-                  Container(
-                    width: size.width * 0.85,
-                    alignment: Alignment.centerRight,
-                    child: ElevatedButton(
-                      onPressed: onSearch,
-                      child: Text("Search"),
-                    ),
-                  ),
-                  userMap != null
-                      ? ListTile(
-                          title: Text(userMap?['name']),
-                          subtitle: Text(userMap?['email']),
-                        )
-                      : Container()
-                ],
-              ));
+                ),
+                userMap != null
+                    ? ListTile(
+                        onTap: () {},
+                        leading: Icon(Icons.person),
+                        title: Text(userMap?['name']),
+                        subtitle: Text(userMap?['email']),
+                        trailing: Icon(Icons.chat_bubble),
+                      )
+                    : Container()
+              ],
+            ),
+    );
   }
 }
