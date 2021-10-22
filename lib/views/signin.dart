@@ -30,28 +30,57 @@ class _SignInState extends State<SignIn> {
     } else {
       return SafeArea(
         child: Scaffold(
-          body: SingleChildScrollView(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
+          resizeToAvoidBottomInset: false,
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(25, 5, 5, 5),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Welcomeback ",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w400)),
+                      SizedBox(
+                        height: size.height * 0.02,
+                      ),
+                      Text("Sign in your acoount",
+                          style: TextStyle(color: Colors.white, fontSize: 15)),
+                    ],
+                  ),
+                ),
+                alignment: Alignment.centerLeft,
+                height: size.height * 0.18,
+              ),
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(15),
+                          topRight: Radius.circular(15)),
+                      color: Colors.white),
                   child: Container(
                     padding: EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       children: [
-                        SizedBox(height: size.height * 0.15),
+                        SizedBox(height: size.height * 0.08),
                         TextField(
                             controller: _email,
                             style: simpleTextFieldStyle(),
                             decoration: textFieldInputDecoration("Email")),
-                        SizedBox(height: 30),
+                        SizedBox(height: size.height * 0.04),
                         TextField(
                             controller: _password,
                             style: simpleTextFieldStyle(),
                             decoration: textFieldInputDecoration("Password")),
                         SizedBox(
-                          height: 30,
+                          height: size.height * 0.04,
                         ),
                         Container(
                           alignment: Alignment.centerRight,
@@ -64,7 +93,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: size.height * 0.04,
                         ),
                         GestureDetector(
                           onTap: () {
@@ -113,7 +142,7 @@ class _SignInState extends State<SignIn> {
                           ),
                         ),
                         SizedBox(
-                          height: 20,
+                          height: size.height * 0.03,
                         ),
                         Row(
                           children: [
@@ -140,7 +169,7 @@ class _SignInState extends State<SignIn> {
                           ],
                         ),
                         SizedBox(
-                          height: 20,
+                          height: size.height * 0.03,
                         ),
                         Container(
                             alignment: Alignment.center,
@@ -154,10 +183,7 @@ class _SignInState extends State<SignIn> {
                               style:
                                   TextStyle(fontSize: 18, color: Colors.white),
                             )),
-                        SizedBox(
-                          height: 18,
-                        ),
-                        SizedBox(height: 40),
+                        SizedBox(height: size.height * 0.05),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -187,8 +213,8 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       );

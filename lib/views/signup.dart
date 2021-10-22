@@ -35,151 +35,183 @@ class _SignUpState extends State<SignUp> {
     } else {
       return SafeArea(
           child: Scaffold(
-              body: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-            Container(
-              height: size.height * 0.10,
-            ),
-            Container(
-              child: Container(
-                height: size.height * 0.70,
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: [
-                    TextField(
-                        controller: _name,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Username")),
-                    SizedBox(height: size.height * 0.04),
-                    TextField(
-                        controller: _email,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Email")),
-                    SizedBox(height: size.height * 0.04),
-                    TextField(
-                        controller: _password,
-                        style: simpleTextFieldStyle(),
-                        decoration: textFieldInputDecoration("Password")),
-                    SizedBox(
-                      height: size.height * 0.04,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        if (_name.text.isNotEmpty &&
-                            _email.text.isNotEmpty &&
-                            _password.text.isNotEmpty) {
-                          setState(() {
-                            isLoading = true;
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomeScreen()));
-                          });
-
-                          createAccount(_name.text, _email.text, _password.text)
-                              .then((user) {
-                            if (user != null) {
-                              setState(() {
-                                isLoading = false;
-                              });
-                              print("Login Successfull");
-                            } else {
-                              print("Login Failed");
-                            }
-                          });
-                        } else {
-                          print("Plese Enter Fields");
-                        }
-                      },
-                      child: Container(
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width,
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.blue),
-                        child: Text(
-                          "Create Account",
-                          style: TextStyle(fontSize: 18, color: Colors.white),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: size.height * 0.03,
-                    ),
-                    Row(
-                      children: [
-                        Expanded(
-                            child: Padding(
-                          padding: const EdgeInsets.only(right: 20, left: 20),
-                          child: Divider(
-                            color: Colors.black,
-                          ),
-                        )),
-                        Text(
-                          "OR",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                        Expanded(
-                            child: Padding(
-                          padding: const EdgeInsets.only(right: 20, left: 20),
-                          child: Divider(
-                            color: Colors.black,
-                          ),
-                        ))
-                      ],
-                    ),
-                    SizedBox(
-                      height: size.height * 0.03,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width,
-                      padding: EdgeInsets.symmetric(vertical: 15),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.blue),
-                      child: Text(
-                        "Sign Up With Google",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                    SizedBox(height: size.height * 0.04),
-                    Row(
+              resizeToAvoidBottomInset: false,
+              body:
+                  Column(mainAxisAlignment: MainAxisAlignment.start, children: [
+                Container(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(25, 5, 5, 5),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          "Already Have an Account?  ",
-                          style: simpleTextFieldStyle(),
+                        Text("Welcome to ChatBee",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.w400)),
+                        SizedBox(
+                          height: size.height * 0.02,
                         ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                PageTransition(
-                                    duration: Duration(milliseconds: 200),
-                                    reverseDuration:
-                                        Duration(milliseconds: 200),
-                                    child: SignIn(),
-                                    type: PageTransitionType.rightToLeft));
-                          },
-                          child: Text(
-                            "Sign in",
-                            style: mediumTextFieldStyle(),
-                          ),
-                        ),
+                        Text("Create new acoount",
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 15)),
                       ],
                     ),
-                  ],
+                  ),
+                  alignment: Alignment.centerLeft,
+                  height: size.height * 0.18,
                 ),
-              ),
-            ),
-            Container(
-              height: size.height * 0.10,
-            )
-          ])));
+                Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(15),
+                            topRight: Radius.circular(15))),
+                    child: Container(
+                      padding: EdgeInsets.symmetric(horizontal: 30),
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: size.height * 0.06,
+                          ),
+                          TextField(
+                              controller: _name,
+                              style: simpleTextFieldStyle(),
+                              decoration: textFieldInputDecoration("Username")),
+                          SizedBox(height: size.height * 0.04),
+                          TextField(
+                              controller: _email,
+                              style: simpleTextFieldStyle(),
+                              decoration: textFieldInputDecoration("Email")),
+                          SizedBox(height: size.height * 0.04),
+                          TextField(
+                              controller: _password,
+                              style: simpleTextFieldStyle(),
+                              decoration: textFieldInputDecoration("Password")),
+                          SizedBox(
+                            height: size.height * 0.04,
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              if (_name.text.isNotEmpty &&
+                                  _email.text.isNotEmpty &&
+                                  _password.text.isNotEmpty) {
+                                setState(() {
+                                  isLoading = true;
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()));
+                                });
+
+                                createAccount(
+                                        _name.text, _email.text, _password.text)
+                                    .then((user) {
+                                  if (user != null) {
+                                    setState(() {
+                                      isLoading = false;
+                                    });
+                                    print("Login Successfull");
+                                  } else {
+                                    print("Login Failed");
+                                  }
+                                });
+                              } else {
+                                print("Plese Enter Fields");
+                              }
+                            },
+                            child: Container(
+                              alignment: Alignment.center,
+                              width: MediaQuery.of(context).size.width,
+                              padding: EdgeInsets.symmetric(vertical: 15),
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(15),
+                                  color: Colors.blue),
+                              child: Text(
+                                "Create Account",
+                                style: TextStyle(
+                                    fontSize: 18, color: Colors.white),
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            height: size.height * 0.03,
+                          ),
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 20, left: 20),
+                                child: Divider(
+                                  color: Colors.black,
+                                ),
+                              )),
+                              Text(
+                                "OR",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                              Expanded(
+                                  child: Padding(
+                                padding:
+                                    const EdgeInsets.only(right: 20, left: 20),
+                                child: Divider(
+                                  color: Colors.black,
+                                ),
+                              ))
+                            ],
+                          ),
+                          SizedBox(
+                            height: size.height * 0.03,
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width,
+                            padding: EdgeInsets.symmetric(vertical: 15),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: Colors.blue),
+                            child: Text(
+                              "Sign Up With Google",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 18),
+                            ),
+                          ),
+                          SizedBox(height: size.height * 0.04),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                "Already Have an Account?  ",
+                                style: simpleTextFieldStyle(),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      PageTransition(
+                                          duration: Duration(milliseconds: 200),
+                                          reverseDuration:
+                                              Duration(milliseconds: 200),
+                                          child: SignIn(),
+                                          type:
+                                              PageTransitionType.rightToLeft));
+                                },
+                                child: Text(
+                                  "Sign in",
+                                  style: mediumTextFieldStyle(),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ])));
     }
   }
 }
