@@ -35,10 +35,12 @@ class _SignUpState extends State<SignUp> {
     } else {
       return SafeArea(
           child: Scaffold(
+              backgroundColor: Colors.blue,
               resizeToAvoidBottomInset: false,
               body:
                   Column(mainAxisAlignment: MainAxisAlignment.start, children: [
                 Container(
+                  decoration: BoxDecoration(color: Colors.blue),
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(25, 5, 5, 5),
                     child: Column(
@@ -67,8 +69,8 @@ class _SignUpState extends State<SignUp> {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(15),
-                            topRight: Radius.circular(15))),
+                            topLeft: Radius.circular(40),
+                            topRight: Radius.circular(40))),
                     child: Container(
                       padding: EdgeInsets.symmetric(horizontal: 30),
                       child: Column(

@@ -1,4 +1,6 @@
 import 'package:chat_app/services/methods.dart';
+import 'package:chat_app/views/chatRoomsScreen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -12,6 +14,16 @@ class _HomeScreenState extends State<HomeScreen> {
 
   bool isLoading = false;
   final TextEditingController _search = TextEditingController();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  String chatRoomId(String user1, String user2) {
+    if (user1[0].toLowerCase().codeUnits[0] >
+        user2[0].toLowerCase().codeUnits[0]) {
+      return "$user1$user2";
+    } else {
+      return "$user2$user1";
+    }
+  }
 
   void onSearch() async {
     FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -37,6 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
     final size = MediaQuery.of(context).size;
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
         title: Text("ChatBee"),
@@ -80,7 +93,20 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 userMap != null
                     ? ListTile(
-                        onTap: () {},
+                        onTap: () {
+                          // String roomId = chatRoomId(
+                          //     _auth.currentUser!.displayName!,
+                          //     userMap!['name']);
+
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (_) => ChatRoom(
+                                // chatRoomId: roomId,
+                                userMap: userMap!,
+                              ),
+                            ),
+                          );
+                        },
                         leading: Icon(Icons.person),
                         title: Text(userMap?['name']),
                         subtitle: Text(userMap?['email']),
